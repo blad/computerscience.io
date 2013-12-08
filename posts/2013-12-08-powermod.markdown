@@ -3,20 +3,23 @@ title: PowerMod : Modular Exponentiation
 subtitle: Exponentiation Performed Over Modulus
 post: true
 date: 12-07-2013
+icon: flash
 ---
 ## Why the Modular Exponentiation?
-Commonly used in the field of Crytography to reduce the time complexity of multiplication operations, which can be expensive, and utilize very large numbers, by reducing the number of bits that the multiplicand uses.
+Modular Exponentiation has applications in the field of Crytography and is used
+to reduce the time complexity of multiplication operations, which can be expensive,
+and utilize very large numbers. Modular Exponentiation reduces the number of bits 
+that the multiplicand uses, thus reducing the time complexity for large powers.
 
-For example $100 \times 100 = 10000$ where $100$ is represented by 8 bits, and $10000$ is represented by 16 bits.
-
-The Power Mod algorithm keeps the number of bits down for large exponents, reducing the amount of time it takes to do the multiplication.
+For example $100 \times 100 = 10000$ where $100$ is represented by 8 bits, and
+$10000$ is represented by 16 bits.
 
 So at most the multiplicand\'s number of bits would remain in the $\#bits \leq log_2{m}$ where $m$ is the number we are performing the modulus by.
-
 
 ## Algorithm
 
 ````python
+# Pseudo Code
 def powermod(x, e, m):
 	if e == 0 return 1
 	if e == 1 return x
@@ -31,6 +34,6 @@ def powermod(x, e, m):
 
 
 ## Additional References
-[Primes, Modular Arithmetic, and Public Key Cryptography ](http://www.math.cornell.edu/~mec/2003-2004/cryptography/diffiehellman/diffiehellman.html)
+[Primes, Modular Arithmetic, and Public Key Cryptography ](http://www.math.cornell.edu/~mec/2003-2004/cryptography/diffiehellman/diffiehellman.html)<br>
 [Wikipedia - Modular Exponentiation](http://en.wikipedia.org/wiki/Modular_exponentiation)<br>
 [Wikipedia - Modular Arithmetic](http://en.wikipedia.org/wiki/Modular_arithmetic)

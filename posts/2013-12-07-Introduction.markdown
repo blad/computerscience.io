@@ -2,6 +2,7 @@
 title: Personal Perspective on Computer Science
 post: true
 date: 12-07-2013
+icon: skill-share
 ---
 
 

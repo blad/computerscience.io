@@ -3,6 +3,7 @@ title: A Look at Merge Sort
 subtitle: A Look At Comparison Based Sorting Algorithms
 post: true
 date: 12-07-2013
+icon: magnifying-glass
 ---
 
 
