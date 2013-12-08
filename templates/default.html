@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>On Computer Science - $title$</title>
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/css/default.css" />
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="top-decoration"></div>
+        <div class="container">
+            <div id="content">
+                $if(post)$
+                    $body$
+                $else$
+                    $body$
+                $endif$
+            </div>
+        </div>
+        
+        <footer>
+            <p style="text-align:center;">
+                <a href="/">Index</a> | 
+                <a href="/about.html">About</a> | 
+                <a href="/contact.html">Contact</a>
+            </p>
+            <div class="bottom-decoration"></div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </body>
+</html>
