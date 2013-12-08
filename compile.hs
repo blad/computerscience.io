@@ -2,13 +2,21 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import           Hakyll.Core.Configuration
 import           Text.Pandoc.Options
 
 pandocOptions :: WriterOptions
 pandocOptions = defaultHakyllWriterOptions { writerHTMLMathMethod = MathJax ""}
+
+
+customConfig :: Configuration
+customConfig = getDefaultsAndModify defaultConfiguration
+    where  getDefaultsAndModify (Configuration dest store tmp provider ignore _ depHaskell cache prevPort) = Configuration dest store tmp provider ignore  deploy depHaskell cache prevPort
+           deploy = "sh deploy.sh"
+
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = hakyllWith customConfig $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
