@@ -96,3 +96,23 @@ pre.sourceCode span.al { color: #FAA; font-weight: bold; }
 pre.sourceCode span.fu { color: #95e454; } /* Language construct */
 pre.sourceCode span.re { }
 pre.sourceCode span.er { color: red; font-weight: bold; }
+
+table {
+    width:100%;
+    font-size:1.2em;
+}
+thead{
+    background-color:#000;
+    color:#fff;
+}
+
+tr.even {
+    background-color:#eee;
+}
+
+td,th {
+    border-left:solid 1px #aaa;
+    border-right:solid 1px #aaa;
+    border-bottom:solid 1px #aaa;
+    padding:3px 5px;
+}

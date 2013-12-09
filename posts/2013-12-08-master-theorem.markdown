@@ -48,8 +48,8 @@ The Master Theorem is simply a cookbook method that allows us to find a closed f
 The rules are as follows:
 
 $log_b{a} > c$ then $T(n) = O (n^{log_b{a}})$  <br>
-$log_b{a} = c$ then $T(n) = O (n^c {log}^{d+1}_b{n})$ <br>
-$log_b{a} < c$ then $T(n) = O (n^c {log}^{d}_b{n})$ 
+$log_b{a} = c$ then $T(n) = O (n^c {log}^{d+1}{n})$ <br>
+$log_b{a} < c$ then $T(n) = O (n^c {log}^{d}{n})$ 
 
 ## Example
 
