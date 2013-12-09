@@ -2,7 +2,7 @@
 title: Master Theorem
 subtitle: A Way to Analyze Divide & Conquer Recurrences
 post: true
-date: 12-07-2013
+date: 12-08-2013
 icon: formula01
 ---
 

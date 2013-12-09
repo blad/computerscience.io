@@ -2,7 +2,7 @@
 title: Graph Searching Algorithms
 subtitle: A Quick Exploration of Graph Searching Algorithms
 post: true
-date: 12-08-2013
+date: 12-09-2013
 icon: molecule05
 ---
 

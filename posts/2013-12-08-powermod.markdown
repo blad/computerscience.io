@@ -2,7 +2,7 @@
 title: PowerMod : Modular Exponentiation
 subtitle: Exponentiation Performed Over Modulus
 post: true
-date: 12-07-2013
+date: 12-08-2013
 icon: flash
 ---
 ## Why the Modular Exponentiation?
