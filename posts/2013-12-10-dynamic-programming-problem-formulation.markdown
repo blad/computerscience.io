@@ -44,7 +44,7 @@ def LargestContSubsequenceSum(array A):
     S = array[len(A)]
     S[0] = A[0]
     for 1 in [1..len(A)-1]:
-        S[i] = max(S[i-1], S[i-1] + A[i-1])
+        S[i] = max(A[i], S[i-1] + A[i])
     return maximum(S)  # Return maximum value in S
 ````
 So this is great, we calculated the max sums of contigious sub-arrays, but how do we know
@@ -77,8 +77,8 @@ Fibonacci Numbers are defined by the following reccurrance;
 
 $F_i = \left\{
      \begin{array} \\
-       0  & : if i = 0 \\
-       1 & : if i = 1 \\
+       0  & : \text{if }i = 0 \\
+       1 & : \text{if }i = 1 \\
        F_{i-1} + F_{i-2} & : otherwise
      \end{array}
    \right.$
