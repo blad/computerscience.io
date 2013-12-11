@@ -15,7 +15,7 @@ search space.
 ## General Search Problem
 When we consider a search or path problem, we generally compare our solution
 with an evaluation function that tells us how good our solution is in comparison
-to another solution, or partial solution, this is generally refered to as the 
+to another solution, or partial solution, this is generally referred to as the 
 *evaluation function* or *objective function* which we generally seek to minimize
 in shortest/quickest path type problems.
 
@@ -24,7 +24,7 @@ $minimize:\ f(n)$
 The heuristics in search algorithms come into play when we introduce problem 
 specific knowledge beyond that given by a problem definition.
 
-For example in a shortest path problem, we might use knowlege about the topography 
+For example in a shortest path problem, we might use knowledge about the topography 
 of the search space like straight line distance to help estimate an what the 
 optimal solution could be and this help us reach that optimal solution.
 
@@ -75,14 +75,14 @@ def BestFirstSeach(start, goal):
 <span style="font-size:small;">*\*Algorithm adapted from AIMA by Peter Norvig*</span>
 
 ## Greedy Best First Search
-Consider the case where our objective function is based soly on a chosen heuristic, $f(n) = h(n)$.
+Consider the case where our objective function is based only on a chosen heuristic, $f(n) = h(n)$.
 Our algorithm will choose to expand the next node with the closest distance to the goal. 
 
 If you think about this, with some intuition we can see that moving to a node that is estimated closest to
 a goal node will more likely get us to the goal quicker than a node with is not as close to the goal.
 
 This algorithms is not fool proof and the heuristic can lead us to dead-ends and less than optimal solutions,
-making Greedy Best First Seach not optimal(Solution can be optimal, but it is not a guarantee).
+making Greedy Best First Search not optimal(Solution can be optimal, but it is not a guarantee).
 
 ````python
 #Pseudo Code
@@ -116,12 +116,12 @@ def GreedyBestFirstSeach(start, goal):
 ## A\* Search
 Lastly, we have what is one of the most famous best first search algorithms which is complete and 
 optimal. A* search is able to reach a solution node by making decisions base on the combined 
-estimated total cost to reach a goal node, making our objective funcition the sum of the path cost so far
+estimated total cost to reach a goal node, making our objective function the sum of the path cost so far
 and the estimated distance to the goal.
 
 $f(n) = g(n) + h(n)$
 
-Using a graph search with a Priority Queue like we have been so far, we can code up the algorithm, by modyfing our 
+Using a graph search with a Priority Queue like we have been so far, we can code up the algorithm, by modifying our 
 comparator for our priority queue.
 
 ````python
@@ -151,15 +151,19 @@ def GreedyBestFirstSeach(start, goal):
                 fontier.add(neighbor)     # Lower Cost
     return false
 ````
+Some important notes about $h(n)$ is that it must be an admissible and consistent heuristic.
+$h(n)$ is admissible if it does not overestimate the distance to the goal and $h(n)$ is consistent
+if $h(n) \le cost(n \rightarrow n') + h(n')$.
+
 ## Conclusion
 
 From this we can see that a simple modification to the ordering of the node processing can make a 
 large difference between the amount of time, and if we can reach an optimal solution.
 
 ## Related Resources
-[Artifical Intelligence a Modern Approach](http://aima.cs.berkeley.edu/index.html)* <br>
+[Artificial Intelligence a Modern Approach](http://aima.cs.berkeley.edu/index.html)* <br>
 [A* - Wikipedia](http://en.wikipedia.org/wiki/A*_search_algorithm)<br>
 [Best First Seach - Wikipedia](http://en.wikipedia.org/wiki/Best-first_search)<br>
 [Greedy Best First Search - Wikipedia](http://en.wikipedia.org/wiki/Best-first_search#Greedy_BFS)<br>
 [Graph traversal - Wikipedia](http://en.wikipedia.org/wiki/Graph_traversal) <br>
-[Tree Traversal - WIkipedia](http://en.wikipedia.org/wiki/Tree_traversal)<br>
+[Tree Traversal - Wikipedia](http://en.wikipedia.org/wiki/Tree_traversal)<br>

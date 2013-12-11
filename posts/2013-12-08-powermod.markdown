@@ -1,12 +1,12 @@
 ---
-title: PowerMod : Modular Exponentiation
+title: Power Mod : Modular Exponentiation
 subtitle: Exponentiation Performed Over Modulus
 post: true
 date: 12-08-2013
 icon: flash
 ---
 ## Why the Modular Exponentiation?
-Modular Exponentiation has applications in the field of Crytography and is used
+Modular Exponentiation has applications in the field of Cryptography and is used
 to reduce the time complexity of multiplication operations, which can be expensive,
 and utilize very large numbers. Modular Exponentiation reduces the number of bits 
 that the multiplicand uses, thus reducing the time complexity for large powers.

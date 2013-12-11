@@ -7,22 +7,22 @@ icon: gears
 ## Introduction
 
 Dynamic Programming is about solving a problem by taking it and then
-decomposing it into smaller overlapping subproblems.
+decomposing it into smaller overlapping sub-problems.
 
-Dynamic Programming boild down to:
+Dynamic Programming boils down to:
 
-1. Finding a recurrance whose solution is the optimal value
-2. Using an iterative solution to compute the values of the reccurance.
+1. Finding a recurrence whose solution is the optimal value
+2. Using an iterative solution to compute the values of the recurrence.
 
 We do this to solve for the optimal solution of problem, since we know
-that a problem will be composed of optimal solutions to its subproblems.
+that a problem will be composed of optimal solutions to its sub-problems.
 
-## Maximum Subarray Problem
-Given a one dimensional array, amoung all contigous sub-arrays find the sub-array
+## Maximum Sub-array Problem
+Given a one dimensional array, among all contiguous sub-arrays find the sub-array
 with the max sum.
 
 
-The recurrance has the form:
+The recurrence has the form:
 
 $S_i = \left\{
         \begin{array}\\
@@ -31,10 +31,10 @@ $S_i = \left\{
         \end{array}
     \right.$
 
-Where $S_i$ is the sum of the longest subsequence, recursively defined as the maximum of the 
+Where $S_i$ is the sum of the longest sub-sequence, recursively defined as the maximum of the 
 $i^{th}$ element in array $A$ or the sum of the element $A_i$ and the previous largest sum.
 
-And then we turn this into an code that computes the values of the reccurance iteratively.
+And then we turn this into an code that computes the values of the recurrence iteratively.
 
 ````python
 # Pseudo Code
@@ -47,7 +47,7 @@ def LargestContSubsequenceSum(array A):
         S[i] = max(A[i], S[i-1] + A[i])
     return maximum(S)  # Return maximum value in S
 ````
-So this is great, we calculated the max sums of contigious sub-arrays, but how do we know
+So this is great, we calculated the max sums of contiguous sub-arrays, but how do we know
 which is the sub-array with the greatest sum? Well since we calculated the array `S` we can
 modify the algorithm above to do a bit of book keeping keep track of the starting index of the
 current sum of a sub-array.
@@ -73,7 +73,7 @@ def maxSumSubArray():
     return A[start:end]       # return the sub array from `start` to `end`
 `````
 ## Fibonnacci Numbers
-Fibonacci Numbers are defined by the following reccurrance;
+Fibonacci Numbers are defined by the following recurrence;
 
 $F_i = \left\{
      \begin{array} \\
@@ -83,7 +83,7 @@ $F_i = \left\{
      \end{array}
    \right.$
 
-We can then turn this recurrance directly into an algorithm to find the $i^{th}$ Fibonacci number as follows;
+We can then turn this recurrence directly into an algorithm to find the $i^{th}$ Fibonacci number as follows;
 
 ````python
 #Pseudo Code
@@ -103,27 +103,27 @@ def fib(n):
 
 This dynamic programming solution uses $O(n)$ space, and generates the table in $O(n)$ time as well.
 
-Once the table is built, the query of the $n^{th}$ fibonacci number is $O(1)$ assuming values up to $n$
+Once the table is built, the query of the $n^{th}$ Fibonacci number is $O(1)$ assuming values up to $n$
 have already been generated and captured elsewhere.
 
 
-## Longest Common Subsequence of Two Strings
+## Longest Common Sub-sequence of Two Strings
 Given two sequences of strings, find the *longest* common
-subsequence of characters.
+sub-sequence of characters.
 
 We can solve this by looking at the ends of the two strings, we do this
-because we can easily see that the longest common subsequence of both strings will match
+because we can easily see that the longest common sub-sequence of both strings will match
 contain a this match at the end.
 
 If the ends of the strings do not match then we must discard one of the characters in one
-of the two substrings, in which case we are back at the original problem of finding the 
-longest common substring, but we are now looking at a subproblem of the original, which has
+of the two sub-strings, in which case we are back at the original problem of finding the 
+longest common sub-string, but we are now looking at a sub-problem of the original, which has
 the same solution as that of the larger problem. 
 
-We can then find the solution for the subproblems of using a prefix of the first string and 
-a prefix of the second string, and use the best solution from the two subproblems.
+We can then find the solution for the sub-problems of using a prefix of the first string and 
+a prefix of the second string, and use the best solution from the two sub-problems.
 
-We derive a recurrance to break down our problem to subproblems.
+We derive a recurrence to break down our problem to sub-problems.
 
 
 $L_{i,\ j} = \left\{
@@ -133,7 +133,7 @@ $L_{i,\ j} = \left\{
      \end{array}
    \right.$
 
-Having determined a reccurance, we can now translate this into building a table of values we can 
+Having determined a recurrence, we can now translate this into building a table of values we can 
 then turn around and look up.
 
 ````python
@@ -152,8 +152,8 @@ def LCSLength(String X,String Y)
     return L[len(X), len(Y)]
 ````
 
-This algorithm gives us the maximum length of our longest common subsequence, but now we can use the table
-that we generated to backtrack using the table and extract the longest common subsequence.
+This algorithm gives us the maximum length of our longest common sub-sequence, but now we can use the table
+that we generated to backtrack using the table and extract the longest common sub-sequence.
 
 ````python
 # Pseudo Code
@@ -166,7 +166,7 @@ def GetLCS(X, Y):
             out.add(X[i-1])
             i--
             j--
-        else if L[i,j-1] >= L[i-1, j] # Move to Best Subproblem Solution
+        else if L[i,j-1] >= L[i-1, j] # Move to Best Sub-problem Solution
             j -= 1
         else
             i -= 1
@@ -195,15 +195,15 @@ $v$ is an array that holds values, where each index, $v_i$ corresponds to the va
 
 $w$ is an array that holds weight, where each index, $w_i$ corresponds to the weight of item $i$.
 
-$C$ is the overall capacity contraint of our knapsack.
+$C$ is the overall capacity constraint of our knapsack.
 
 So the idea is to choose a subset of the items whose sum of weights is less than our capacity constraint
-and whos value is as large as possible. To use an analogy, imagine being in a cave with treasure
+and who\'s value is as large as possible. To use an analogy, imagine being in a cave with treasure
 and being able to only carry 50 pounds, but you know everything has a different worth {a.k.a. benefit/profit}
 you can derive, so you must pack your knapsack such that you can carry it and achieve maximum profit.
 
 
-To make this a dynamic programming problem we must find a reccurrance. 
+To make this a dynamic programming problem we must find a recurrence. 
 $K_{i,\ j} = \left\{
      \begin{array} \\
        0 & : if\ i = 0 \\
@@ -212,16 +212,16 @@ $K_{i,\ j} = \left\{
      \end{array}
    \right.$
 
-In our recurrance, $K_{i,\ j}$ is the benefit we get from considering the first $i$ items and capacity
+In our recurrence, $K_{i,\ j}$ is the benefit we get from considering the first $i$ items and capacity
 $j$. 
 
 Imagine having a knapsack, starting with 50 pounds, after taking item $n$ of weight 5 and value 10, we 
-can then solve the equivalent subproblem of a 45 pound knapsack and with $n-1$ items, or the subproblem of
+can then solve the equivalent sub-problem of a 45 pound knapsack and with $n-1$ items, or the sub-problem of
 a 50 pound knapsack with $n-1$ items. Meaning we either take item $n$ or we do not. The optimal solution 
 will then be a a set containing the optimum solution to each of the sub problems.
 
 
-Traslating the recurrance into code we get:
+Translating the recurrence into code we get:
 ```python
 # Pseudo Code
 def KnapsackBuildRecurrance(C:Capacity, sizes:array, values:array)
@@ -238,18 +238,18 @@ def KnapsackBuildRecurrance(C:Capacity, sizes:array, values:array)
 ````
 
 After computing the table values for our knapsack problem we can then use a similar algorithm 
-to the Longest Common Subsequence algorithm retreive the set of items that we choose to take.
+to the Longest Common Sub-sequence algorithm retrieve the set of items that we choose to take.
 
 ## Analysis
-Dynamic programming is simply filling in an array when it computes the values of a reccurrance, so the
-running time of a dynamic programming is $O(nm)$ where $n$ and $m$ are the dimentions of the array
+Dynamic programming is simply filling in an array when it computes the values of a recurrence, so the
+running time of a dynamic programming is $O(nm)$ where $n$ and $m$ are the dimensions of the array
 we are filling out, where the worst case comes when $n = m$ thus $O(n^2)$ worst case time in the number of input items.
 
 ## Additional Resources
-[Ch6 Dynamic Progamming- S. Dasgupta, C. H. Papadimitriou, and U. V. Vazirani](http://www.cs.berkeley.edu/~vazirani/algorithms/chap6.pdf)<br>
+[Ch6 Dynamic Programming- S. Dasgupta, C. H. Papadimitriou, and U. V. Vazirani](http://www.cs.berkeley.edu/~vazirani/algorithms/chap6.pdf)<br>
 [Dynamic Programming - Wikipedia](http://en.wikipedia.org/wiki/Dynamic_programming)<br>
 [Knapsack Problem - Wikipedia](http://en.wikipedia.org/wiki/Knapsack_problem)<br>
 [Pseudo Polynomial Time - Wikipedia](http://en.wikipedia.org/wiki/Pseudo-polynomial_time)<br>
-[Longest Common Subsequence - Wikipedia](http://en.wikipedia.org/wiki/Longest_common_subsequence_problem)<br>
+[Longest Common Sub-sequence - Wikipedia](http://en.wikipedia.org/wiki/Longest_common_subsequence_problem)<br>
 [Subset Sum Problem - Wikipedia](http://en.wikipedia.org/wiki/Subset_sum_problem)<br>
 [Fibonacci Number - Wikipedia](http://en.wikipedia.org/wiki/Fibonacci_number)<br>

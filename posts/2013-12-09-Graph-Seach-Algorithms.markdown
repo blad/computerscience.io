@@ -10,14 +10,14 @@ icon: molecule05
 ## Introduction
 A graph and a tree are simply two representations of a data-structure that we can 
 consider as part of a problem. Some of the most common problems that we are looking
-to solve that utilize these strucutres are shortest-path, least number of hops,
+to solve that utilize these structures are shortest-path, least number of hops,
 and even decision problems. In this post we will be looking at how we can search
-a graph data strucure to get to a known goal node.
+a graph data structure to get to a known goal node.
 
 ## Graph And Tree Search
 
 In Peter Norvig\'s book, *Artificial Intelligence a Modern Approach*, Norvig makes a distinction
-between two types of searchin algorithms, one he calls `Tree Search` and the other `Graph Search`,
+between two types of search in algorithms, one he calls `Tree Search` and the other `Graph Search`,
 where both algorithms work on graphs and trees, regardless of their names.
 
 The distinction in these two algorithms comes in the fact that `Tree Search` is simply
@@ -32,13 +32,13 @@ The algorithms are presented in pseudo code below, and are modified version of t
 Norvig presents in his AIMA book.
 
 After that we look at the various algorithms based on `Graph Search` that we can use to find
-a path from a starting node to a desitination or goal.
+a path from a starting node to a destination or goal.
 
 ### Tree Search Algorithm
 
 The Tree Search Algorithm uses a FIFO Queue to keep track of the nodes we still need to explore,
 It then looks at the neighbors (Children) of each node starting at a start (root) node,  and
-continueing until a solution is found. 
+continuing until a solution is found. 
 
 ```python
 def TreeSearch(start, goal):
@@ -188,11 +188,11 @@ def DepthLimitedSearch(start, goal, limit):
             return false
 ````
 
-Depth Limited Seach has a time complexity of $O(b^l)$ and a space complexity of $O(bl)$.
+Depth Limited Search has a time complexity of $O(b^l)$ and a space complexity of $O(bl)$.
 Depth Limited Search is a way to do a depth-first style search without the possibility of
 the algorithm getting stuck in one region of the search space, while giving us the space complexity
 benefit of Depth First Search. The exception being that we much be careful to choose an
-appropriate value fo r our limit, since our search must be within the limit otherwise we 
+appropriate value for our limit, since our search must be within the limit otherwise we 
 the search will not yield a solution.
 
 ## Iterative Deepening Graph Search

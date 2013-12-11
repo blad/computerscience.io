@@ -23,7 +23,7 @@ def DepthFirstExploration(node):
             DepthFirstSearch(w)
 ````
 
-Note that this algorithm can get into a very deep recursion, and may get stuck in certains areas of a 
+Note that this algorithm can get into a very deep recursion, and may get stuck in certain areas of a 
 graph while exploring very large graphs.
 
 
