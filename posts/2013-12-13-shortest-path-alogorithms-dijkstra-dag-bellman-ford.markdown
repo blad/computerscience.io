@@ -116,7 +116,7 @@ def bellmanFordShortestPath(graphG, start):
     parent[start] = None
 
     for i in range(1, count(graphG.nodes())-1)
-        for edge[i] in graphG:
+        for edge in graphG:
             if distance[edge.destination] > distance[edge.source] + edge.weight()
                 distance[edge.destination] = distance[edge.source] + edge.weight()
                 parent[edge.destination] = edge.source
