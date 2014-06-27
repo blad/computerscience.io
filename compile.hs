@@ -11,7 +11,7 @@ pandocOptions = defaultHakyllWriterOptions { writerHTMLMathMethod = MathJax ""}
 
 customConfig :: Configuration
 customConfig = getDefaultsAndModify defaultConfiguration
-    where  getDefaultsAndModify (Configuration dest store tmp provider ignore _ depHaskell cache prevPort) = Configuration dest store tmp provider ignore  deploy depHaskell cache prevPort
+    where  getDefaultsAndModify (Configuration dest store tmp provider ignore _ depHaskell cache previewHost prevPort) = Configuration dest store tmp provider ignore deploy depHaskell cache previewHost prevPort
            deploy = "sh deploy.sh"
 
 --------------------------------------------------------------------------------

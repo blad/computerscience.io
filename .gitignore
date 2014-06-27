@@ -4,3 +4,4 @@ _site/
 *.hi
 *.exe
 deploy.sh
+compile
